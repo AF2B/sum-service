@@ -1,0 +1,10 @@
+{:http/routes
+ {:routes
+  [["/sum" :get :math/sum]]}}
+
+;; {:server/http
+;;  {:port 8080}
+;; 
+;;  :http/routes
+;;  {:routes
+;;   [["/sum" :get :math/sum]]}}
