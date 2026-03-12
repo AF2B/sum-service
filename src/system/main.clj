@@ -1,11 +1,11 @@
 (ns system.main
   (:gen-class)
-  (:require [system.core :as core]))
+  (:require
+   [borba.runtime.main :as runtime]
+   [system.core]))
 
 (defn -main
   [& [profile]]
-  (core/start profile)
-  (let [profile (keyword (or profile "dev"))]
-    (println "System started with profile: " profile))
-  
-  @(promise) "Press Enter to stop the system...")
+
+  (runtime/run
+   {:profile (keyword (or profile "dev"))}))
