@@ -1,0 +1,18 @@
+{:service/core-ns         com.borba.sum-service.core
+ :service/default-profile stag
+
+ :components #profile {:stag #include "com/borba/sum_service/components/stag.edn"
+                       :prod #include "com/borba/sum_service/components/prod.edn"
+                       :test #include "com/borba/sum_service/components/test.edn"}
+
+ :ig/system
+ {:server/http
+  {:port   #or [#env PORT 8080]
+   :host   "0.0.0.0"
+   :routes #ig/ref :http/routes}
+
+  :http/routes
+  {:routes   []
+   :handlers #ig/ref :service/handlers}
+
+  :service/handlers {}}}

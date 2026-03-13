@@ -1,0 +1,3 @@
+#profile {:stag #include "com/borba/sum_service/system/stag.edn"
+          :prod #include "com/borba/sum_service/system/prod.edn"
+          :test #include "com/borba/sum_service/system/test.edn"}
