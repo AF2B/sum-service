@@ -6,26 +6,26 @@ PROD-PROFILE=prod
 TEST-PROFILE=test
 
 run:
-	clojure -M:run
+	@clojure -M:run
 
 stag:
-	clojure -M:$(RUN) $(DEV-PROFILE)
+	@clojure -M:$(RUN) $(DEV-PROFILE)
 
 prod:
-	clojure -M:$(RUN) $(PROD-PROFILE)
+	@clojure -M:$(RUN) $(PROD-PROFILE)
 
 test:
-	clojure -M:$(TEST-PROFILE) -m kaocha.runner
+	@clojure -M:$(TEST-PROFILE) -m kaocha.runner
 
 coverage:
 	clojure -M:$(TEST-PROFILE) -m kaocha.runner --plugin kaocha.plugin/cloverage
 	@echo "Coverage report: target/coverage/index.html"
 
 clean:
-	rm -rf .cpcache
+	@rm -rf .cpcache
 
 deps:
-	clojure -P
+	@clojure -P
 
 help:
 	@echo "Available targets:"
