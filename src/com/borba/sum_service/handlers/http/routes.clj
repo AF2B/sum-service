@@ -4,4 +4,6 @@
 
 (defmethod ig/init-key :service/handlers
   [_ _]
-  {:math/sum [i/parse-query i/sum-interceptor i/response-interceptor]})
+  {:sum/compute [i/parse-query 
+                 i/sum-interceptor 
+                 i/response-interceptor]})

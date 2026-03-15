@@ -11,7 +11,7 @@
 
 (defn- build-service-fn []
   (let [handlers (ig/init-key :service/handlers {})
-        routes   (ig/init-key :http/routes {:routes   [["/v1/sum" :get :math/sum]]
+        routes   (ig/init-key :http/routes {:routes   [["/v1/sum" :get :sum/compute]]
                                             :handlers handlers})]
     (-> {::http/routes (route/expand-routes routes)
          ::http/type   :jetty
