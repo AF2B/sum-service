@@ -18,7 +18,7 @@ test:
 	@clojure -M:$(TEST-PROFILE) -m kaocha.runner
 
 coverage:
-	clojure -M:$(TEST-PROFILE) -m kaocha.runner --plugin kaocha.plugin/cloverage
+	@clojure -M:$(TEST-PROFILE) -m kaocha.runner --plugin kaocha.plugin/cloverage
 	@echo "Coverage report: target/coverage/index.html"
 
 clean:
