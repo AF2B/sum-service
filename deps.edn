@@ -44,4 +44,10 @@
    {lambdaisland/kaocha {:mvn/version "1.91.1392"}
     lambdaisland/kaocha-cloverage {:mvn/version "1.1.89"}
     nubank/state-flow {:mvn/version "5.20.1"}
-    org.clojure/test.check {:mvn/version "1.1.1"}}}}}
+    org.clojure/test.check {:mvn/version "1.1.1"}}}
+
+  :build
+  {:deps
+   {io.github.clojure/tools.build {:git/tag "v0.10.5"
+                                   :git/sha "2a21b7a"}}
+   :ns-default build}}}
