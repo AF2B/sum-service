@@ -1,4 +1,4 @@
 #deep-merge [#include "com/borba/sum_service/system/base.edn"
              {:ig/system
               {:http/routes
-               {:routes [["/v1/sum" :get :math/sum]]}}}]
+               {:routes [["/v1/sum" :get :sum/compute]]}}}]
