@@ -54,8 +54,8 @@
 
     borba/borba-build-component
     {:git/url "https://github.com/AF2B/borba-build-component"
-     :git/tag "v0.1.1"
-     :git/sha "514c2b7eea9397564fed1ba6152acc5f81bcc7f6"}}
+     :git/tag "v0.1.2"
+     :git/sha "32e5ad155f8b68b118a87279a0ee47226f3489f3"}}
 
    :ns-default   borba.build
    :exec-args    {:lib           com.borba/sum-service
