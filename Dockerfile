@@ -10,8 +10,12 @@ WORKDIR /app
 # Copy only the dependency manifest first.
 # This layer is cached independently and only invalidated when deps.edn changes,
 # which avoids re-downloading the entire dependency tree on every source change.
+#
+# `clojure -P` resolves all app deps (main + aliases).
+# `clojure -P -T:build` resolves the tools.build git dep separately.
+# Neither command requires build.clj to be present yet.
 COPY deps.edn .
-RUN clojure -T:build deps
+RUN clojure -P && clojure -P -T:build
 
 # Copy source and compile. This layer is invalidated on any source change.
 COPY . .

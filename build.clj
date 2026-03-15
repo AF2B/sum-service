@@ -7,9 +7,6 @@
 
   Usage
   -----
-  Resolve deps only (CI cache warm-up):
-    clojure -T:build deps
-
   Build uberjar:
     APP_VERSION=1.2.3 clojure -T:build uber
 
@@ -33,13 +30,6 @@
   "Remove all build artifacts under target/."
   [_]
   (b/delete {:path "target"}))
-
-(defn deps
-  "Resolve and cache all dependencies declared in deps.edn.
-  Useful as a standalone step to warm the CI dependency cache
-  before compiling source."
-  [_]
-  (b/create-basis {:project "deps.edn"}))
 
 (defn uber
   "Compile Clojure sources and produce a self-contained uberjar.
